@@ -41,6 +41,7 @@ async def calcular_cashback(dados: requisicaoCompra, request: Request): # o para
     ip = ip.split(",")[0].strip()
     
     cashback = aplicacaoDesconto(dados.compra, dados.cupom, dados.vip)
+    cashbackInteiro = int(cashback)
     
     conexao = connection() #abre conexão para para executar o select
     try:
@@ -57,7 +58,7 @@ async def calcular_cashback(dados: requisicaoCompra, request: Request): # o para
         "compra": dados.compra,
         "cupom": dados.cupom,
         "vip": dados.vip,
-        "cashback": round(cashback, 2) #arredonda o cashback para 2 casas decimais
+        "cashback": cashbackInteiro
     }
     
 @app.get("/historico")
