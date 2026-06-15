@@ -7,7 +7,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://cashback-online.vercel.app/"],
+    allow_origins=["https://cashback-online.vercel.app"],
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
