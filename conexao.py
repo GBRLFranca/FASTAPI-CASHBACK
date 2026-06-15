@@ -11,5 +11,6 @@ def connection():
         password=os.getenv("DB_PASSWORD"),
         database=os.getenv("DB_NAME"),
         port=int(os.getenv("DB_PORT")), # converte para o tipo int pq o que vem do .env é string
+        init_command="SET time_zone = '-03:00'",
         cursorclass=pymysql.cursors.DictCursor #faz o cursor retornar os resultados como dicionario ao inves de duplas
     )
