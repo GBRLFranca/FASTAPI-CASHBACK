@@ -67,3 +67,7 @@ async def get_historico(request: Request): #função não preciso do corpo somen
         "ip": ip,
         "historico": registros
     }
+    
+@app.get("/")
+def health_check():
+    return {"status": "ok", "mensagem": "API do Desafio rodando na nuvem!"}
